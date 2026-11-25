@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CostAssist | $250 Holiday Walmart Gift Card Reward Program</title>
-  <meta name="description" content="See how eligible US shoppers can earn a $250 Walmart Gift Card toward holiday groceries, gifts, and family essentials through UpLevel Rewards." />
+  <title>Step 2 of 2 — Finish claiming your $250 to spend at Walmart</title>
+  <meta name="description" content="Follow the four steps below to qualify for your $250 Walmart reward through UpLevel Rewards." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f6f8fb;
-      --card: #ffffff;
-      --primary: #0053e2;
-      --primary-hover: #003ea8;
-      --accent: #ffc220;
-      --holiday: #b91c1c;
-      --text: #111827;
-      --muted: #4b5563;
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #6b7280;
+      --light-muted: #9ca3af;
       --border: #e5e7eb;
-      --success: #047857;
+      --walmart-blue: #0053e2;
+      --walmart-spark: #ffc220;
+      --btn-bg: #1c1917;
+      --btn-hover: #000000;
     }
 
     * {
@@ -26,269 +28,340 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
-    .top-bar {
-      background: #0f172a;
-      color: #f8fafc;
-      text-align: center;
-      font-size: 0.78rem;
-      padding: 8px 12px;
-      letter-spacing: 0.02em;
+    .wrapper {
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 0 22px 48px;
     }
 
-    .top-bar span {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 20px;
+    /* Top Progress Bar */
+    .top-progress {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 0.72rem;
+      padding: 14px 0 10px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
     }
 
-    .brand {
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--primary);
-      letter-spacing: -0.02em;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    .top-progress::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 68%;
+      height: 1.5px;
+      background-color: var(--text);
     }
 
-    .brand-dot {
-      width: 10px;
-      height: 10px;
-      background: var(--accent);
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .geo-badge {
-      font-size: 0.75rem;
-      background: #ecfdf5;
-      color: var(--success);
-      border: 1px solid #a7f3d0;
-      padding: 4px 10px;
-      border-radius: 999px;
+    .step-label {
       font-weight: 600;
-    }
-
-    .container {
-      max-width: 540px;
-      margin: 0 auto;
-      padding: 20px 16px 48px;
-    }
-
-    .hero-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px 20px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
-      text-align: center;
-    }
-
-    .holiday-pill {
-      display: inline-block;
-      background: #fef2f2;
-      color: var(--holiday);
-      border: 1px solid #fecaca;
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    h1 {
-      font-size: 1.65rem;
-      line-height: 1.2;
-      font-weight: 800;
-      margin-bottom: 12px;
       color: var(--text);
     }
 
-    h1 .highlight {
-      color: var(--primary);
+    .status-label {
+      color: var(--muted);
     }
 
-    .subtitle {
-      font-size: 0.96rem;
+    /* Retailer Wordmark */
+    .brand-header {
+      text-align: center;
+      padding: 18px 0 16px;
+      border-bottom: 1px solid #f3f4f6;
+      margin-bottom: 22px;
+    }
+
+    .walmart-wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      color: var(--walmart-blue);
+      text-transform: uppercase;
+    }
+
+    .spark-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
+
+    /* Editorial Hero */
+    h1 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.85rem;
+      line-height: 1.18;
+      letter-spacing: -0.015em;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .lead-copy {
+      font-size: 0.84rem;
       color: var(--muted);
       margin-bottom: 20px;
+      line-height: 1.45;
     }
 
-    .card-visual {
-      background: linear-gradient(135deg, #0053e2 0%, #002d7a 100%);
-      color: #ffffff;
+    .lead-copy u {
+      text-underline-offset: 3px;
+      text-decoration-color: #9ca3af;
+    }
+
+    /* Physical Card Visual */
+    .reward-card {
+      background: linear-gradient(135deg, #0b1c3d 0%, #003896 55%, #0053e2 100%);
       border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 20px;
+      padding: 20px 22px;
+      color: #ffffff;
       position: relative;
-      text-align: left;
-      box-shadow: 0 8px 20px rgba(0, 83, 226, 0.25);
+      height: 182px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 14px 28px -8px rgba(0, 56, 150, 0.28);
+      margin-bottom: 24px;
+      overflow: hidden;
     }
 
-    .card-visual-top {
+    .reward-card::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(255, 194, 32, 0.16) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .card-top-row {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .card-brand {
+      display: flex;
       align-items: center;
-      margin-bottom: 18px;
-      font-size: 0.85rem;
-      opacity: 0.9;
-      font-weight: 600;
+      gap: 5px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f8fafc;
+    }
+
+    .emv-chip {
+      width: 34px;
+      height: 25px;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #f3d078 0%, #d4a338 50%, #f5dc93 100%);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      position: relative;
+    }
+
+    .emv-chip::after {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border: 1px solid rgba(120, 83, 14, 0.35);
+      border-radius: 2px;
     }
 
     .card-amount {
-      font-size: 2.35rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--accent);
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 2.65rem;
+      font-weight: 400;
       line-height: 1;
-      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+      margin-top: 8px;
     }
 
-    .card-caption {
-      font-size: 0.85rem;
-      color: #e2e8f0;
+    .card-footer-label {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 0.02em;
     }
 
+    /* Numbered Steps */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+    }
+
+    .step-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid #d1d5db;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-content h2 {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 2px;
+    }
+
+    .step-content p {
+      font-size: 0.76rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Primary CTA Button */
     .cta-btn {
       display: block;
       width: 100%;
-      background: var(--primary);
+      background-color: var(--btn-bg);
       color: #ffffff;
+      text-align: center;
       text-decoration: none;
-      font-size: 1.08rem;
-      font-weight: 700;
-      padding: 16px 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0, 83, 226, 0.35);
-      transition: background 0.15s ease, transform 0.1s ease;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 15px 20px;
+      border-radius: 8px;
+      transition: background-color 0.15s ease, transform 0.1s ease;
     }
 
     .cta-btn:hover {
-      background: var(--primary-hover);
+      background-color: var(--btn-hover);
     }
 
     .cta-btn:active {
       transform: scale(0.99);
     }
 
-    .cta-subtext {
-      font-size: 0.78rem;
-      color: var(--muted);
+    .cta-caption {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--light-muted);
       margin-top: 10px;
     }
 
-    .steps-section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      margin-top: 16px;
+    /* Questions Accordion */
+    .faq-section {
+      margin-top: 34px;
+      margin-bottom: 26px;
     }
 
-    .steps-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-      text-align: center;
+    .faq-heading {
+      font-family: 'Newsreader', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.25rem;
+      color: var(--text);
+      margin-bottom: 10px;
     }
 
-    .step {
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 13px 0;
       display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      margin-bottom: 14px;
-    }
-
-    .step:last-child {
-      margin-bottom: 0;
-    }
-
-    .step-num {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      background: #eff6ff;
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.85rem;
-      border-radius: 50%;
-      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      border: 1px solid #bfdbfe;
+      font-family: inherit;
+      font-size: 0.81rem;
+      font-weight: 500;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
     }
 
-    .step-text h3 {
-      font-size: 0.92rem;
-      font-weight: 700;
-      margin-bottom: 2px;
+    .faq-icon {
+      color: var(--light-muted);
+      font-size: 1rem;
+      font-weight: 400;
+      transition: transform 0.2s ease;
+      padding-left: 12px;
     }
 
-    .step-text p {
-      font-size: 0.84rem;
-      color: var(--muted);
-    }
-
-    .disclosure-box {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px;
-      margin-top: 16px;
-      font-size: 0.76rem;
-      color: var(--muted);
-    }
-
-    .disclosure-box strong {
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
       color: var(--text);
     }
 
-    footer {
-      text-align: center;
-      margin-top: 24px;
-      font-size: 0.78rem;
+    .faq-answer {
+      display: none;
+      padding-bottom: 13px;
+      font-size: 0.77rem;
       color: var(--muted);
+      line-height: 1.48;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* Legal Footnote */
+    .legal-copy {
+      font-size: 0.68rem;
+      color: var(--light-muted);
+      line-height: 1.48;
+      margin-bottom: 22px;
+    }
+
+    .legal-copy p + p {
+      margin-top: 10px;
     }
 
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 16px;
-      margin-bottom: 10px;
+      gap: 14px;
+      margin-top: 18px;
+      font-size: 0.7rem;
     }
 
     .footer-links button {
       background: none;
       border: none;
-      color: var(--primary);
+      color: var(--muted);
       text-decoration: underline;
-      font-size: 0.78rem;
+      font-size: 0.7rem;
       cursor: pointer;
     }
 
-    /* Modal Styles */
+    /* Modal */
     .modal-backdrop {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(15, 23, 42, 0.6);
+      background: rgba(17, 17, 17, 0.55);
       z-index: 50;
       padding: 20px;
       align-items: center;
@@ -299,156 +372,252 @@
       display: flex;
     }
 
-    .modal-card {
+    .modal-box {
       background: #ffffff;
-      max-width: 480px;
+      max-width: 400px;
       width: 100%;
-      max-height: 80vh;
-      overflow-y: auto;
-      border-radius: 14px;
+      border-radius: 12px;
       padding: 20px;
-      font-size: 0.84rem;
+      font-size: 0.8rem;
       color: var(--muted);
+      line-height: 1.5;
     }
 
-    .modal-header {
+    .modal-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: var(--text);
     }
 
-    .close-btn {
+    .modal-close {
       background: #f3f4f6;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       padding: 4px 10px;
-      font-weight: 700;
+      font-size: 0.75rem;
+      font-weight: 600;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">
-    <span>HOLIDAY SHOPPING REWARD</span> • Available for Eligible US Residents (18+)
-  </div>
+  <div class="wrapper">
+    <!-- Top Progress Bar -->
+    <div class="top-progress">
+      <span class="step-label">Step 2 of 2</span>
+      <span class="status-label">Complete your registration</span>
+    </div>
 
-  <header>
-    <div class="brand"><span class="brand-dot"></span> CostAssist.org</div>
-    <div class="geo-badge">US Program Open</div>
-  </header>
+    <!-- Brand Wordmark -->
+    <header class="brand-header">
+      <div class="walmart-wordmark">
+        WALMART
+        <svg class="spark-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2V6.5M12 17.5V22M4.2 7.5L8.1 9.75M15.9 14.25L19.8 16.5M19.8 7.5L15.9 9.75M8.1 14.25L4.2 16.5" stroke="#FFC220" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </header>
 
-  <main class="container">
-    <section class="hero-card">
-      <div class="holiday-pill">Holiday Household &amp; Gift Guide</div>
-      <h1>Earn a <span class="highlight">$250 Walmart Gift Card</span> for Holiday Shopping</h1>
-      <p class="subtitle">
-        Help cover holiday groceries, kids' gifts, and family essentials by participating in the official UpLevel Rewards program.
+    <!-- Main Headline & Intro -->
+    <main>
+      <h1>Finish claiming your $250 to spend at Walmart</h1>
+      <p class="lead-copy">
+        You're almost there. <u>Follow the four steps below</u> to qualify for your Walmart reward.
       </p>
 
-      <div class="card-visual">
-        <div class="card-visual-top">
-          <span>HOLIDAY SHOPPING REWARD</span>
-          <span>WALMART</span>
+      <!-- Card Visual -->
+      <div class="reward-card">
+        <div class="card-top-row">
+          <div class="card-brand">
+            WALMART
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2V6.5M12 17.5V22M4.2 7.5L8.1 9.75M15.9 14.25L19.8 16.5M19.8 7.5L15.9 9.75M8.1 14.25L4.2 16.5" stroke="#FFC220" stroke-width="2.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="emv-chip"></div>
         </div>
-        <div class="card-amount">$250.00</div>
-        <div class="card-caption">Reward fulfilled upon completing program deal requirements</div>
+        <div>
+          <div class="card-amount">$250</div>
+          <div class="card-footer-label">Shopping credit</div>
+        </div>
       </div>
 
-      <a id="offer-cta" href="https://giftclick.org/?offer_id=5046&aff_id=62181" class="cta-btn" rel="nofollow sponsored">
-        Continue to UpLevel Rewards &rarr;
+      <!-- 4 Steps -->
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-circle">1</div>
+          <div class="step-content">
+            <h2>Tap "Claim my $250" below</h2>
+            <p>It opens the secure sign-up page.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-circle">2</div>
+          <div class="step-content">
+            <h2>Enter your email and basic info</h2>
+            <p>Use an email you check. Updates on your reward go there.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-circle">3</div>
+          <div class="step-content">
+            <h2>Complete 10 qualifying partner deals</h2>
+            <p>Across four reward levels within 60 days. Each deal lists its own terms.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-circle">4</div>
+          <div class="step-content">
+            <h2>Get your $250 to spend at Walmart</h2>
+            <p>Groceries, household items, holiday gifts. Spend it on what you need.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top CTA -->
+      <a href="https://giftclick.org/?offer_id=5046&aff_id=62181" class="cta-btn offer-link" rel="nofollow sponsored">
+        Claim my $250
       </a>
-      <p class="cta-subtext">Takes ~2 minutes to register • Must be 18+ and a US resident</p>
-    </section>
+      <p class="cta-caption">No cost to sign up. Open to eligible US residents (18+).</p>
 
-    <section class="steps-section">
-      <h2 class="steps-title">How the $250 Reward Program Works</h2>
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-text">
-          <h3>Register Your Basic Details</h3>
-          <p>Click the button above to visit UpLevel Rewards and confirm your US eligibility (18+).</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          <h3>Complete 10 Qualifying Partner Deals</h3>
-          <p>Choose and complete 10 partner deals across four reward levels within 60 days of your first deal. Note: Partner deals typically involve trials, purchases, or paid subscriptions.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-text">
-          <h3>Verify &amp; Claim Your $250 Gift Card</h3>
-          <p>Finish the reward claim and identity verification process to receive your $250 Walmart Gift Card.</p>
-        </div>
-      </div>
-    </section>
+      <!-- Questions Accordion -->
+      <section class="faq-section">
+        <h2 class="faq-heading">Questions</h2>
 
-    <section class="disclosure-box">
-      <strong>Important Program &amp; Affiliate Disclosure:</strong> CostAssist.org is an independent promotional publisher and may receive compensation when you register or complete offers through links on this page. This promotion is operated by UpLevel Rewards and is not sponsored, endorsed, or administered by Walmart. Registration or answering survey questions alone does not qualify for the $250 reward; completion of 10 required partner deals (which usually require purchases or paid subscriptions) and identity verification are mandatory.
-    </section>
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>What counts as a qualifying partner deal?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Partner deals are promotions from sponsored brands such as app trials, streaming services, subscriptions, or shopping offers. You choose which deals to complete across four levels, and each deal clearly states its requirements before you start.
+          </div>
+        </div>
 
-    <footer>
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Do I have to buy anything?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            There is no fee to register with UpLevel Rewards, however completing the 10 required partner deals across all four levels usually involves purchases, trials, or paid subscriptions. Registration or answering questions alone does not qualify for the reward.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>How long does it take?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Registration takes about 2 minutes. Once you complete your first deal, you have up to 60 days to finish all 10 required deals and complete identity verification to claim your $250 Walmart Gift Card.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Who can claim this?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            This offer is open to legal residents of the United States who are 18 years of age or older and have not claimed a reward from this sponsor within their program eligibility window.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Can I do this on my phone or computer?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. The sign-up and deal tracker work on both mobile browsers (iOS and Android) and desktop computers. Keep cookies enabled and avoid VPNs so your completed deals track properly.
+          </div>
+        </div>
+      </section>
+
+      <!-- Disclosures -->
+      <div class="legal-copy">
+        <p>
+          This page is not run by, sponsored by, or affiliated with Walmart. Walmart is a trademark of its respective owner and is used here only to describe the reward.
+        </p>
+        <p>
+          The $250 reward is provided through a third-party promotion (UpLevel Rewards). Eligibility, deal requirements (10 qualifying deals across four levels within 60 days, plus identity verification), and reward terms are set by the sponsor and shown on the sign-up page. CostAssist.org may receive affiliate compensation from partner links.
+        </p>
+      </div>
+
+      <!-- Bottom CTA -->
+      <a href="https://giftclick.org/?offer_id=5046&aff_id=62181" class="cta-btn offer-link" rel="nofollow sponsored">
+        Claim my $250
+      </a>
+
       <div class="footer-links">
         <button type="button" onclick="openModal('privacy')">Privacy Policy</button>
         <button type="button" onclick="openModal('terms')">Terms of Use</button>
         <button type="button" onclick="openModal('contact')">Contact</button>
       </div>
-      <p>&copy; 2026 CostAssist.org. All rights reserved.</p>
-    </footer>
-  </main>
+    </main>
+  </div>
 
-  <!-- Legal Modals -->
-  <div id="legal-modal" class="modal-backdrop" onclick="closeModal(event)">
-    <div class="modal-card" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <h3 id="modal-title">Policy</h3>
-        <button type="button" class="close-btn" onclick="closeModal()">Close</button>
+  <!-- Legal Modal -->
+  <div id="legal-modal" class="modal-backdrop" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-top">
+        <strong id="modal-title">Policy</strong>
+        <button type="button" class="modal-close" onclick="closeModal()">Close</button>
       </div>
       <div id="modal-body"></div>
     </div>
   </div>
 
   <script>
-    // Pass through any sub_id / utm tracking tags from your YouTube Shorts URL to the offer link
+    // Forward any sub1 / UTM tracking params from costassist.org URL to both CTA buttons
     (function () {
       const params = new URLSearchParams(window.location.search);
-      const cta = document.getElementById("offer-cta");
-      if (cta && params.toString()) {
-        const baseUrl = new URL(cta.href);
+      if (!params.toString()) return;
+      document.querySelectorAll(".offer-link").forEach((link) => {
+        const url = new URL(link.href);
         params.forEach((value, key) => {
-          if (!baseUrl.searchParams.has(key)) {
-            baseUrl.searchParams.set(key, value);
+          if (!url.searchParams.has(key)) {
+            url.searchParams.set(key, value);
           }
         });
-        cta.href = baseUrl.toString();
-      }
+        link.href = url.toString();
+      });
     })();
 
-    const modalContent = {
+    // Accordion toggle
+    document.querySelectorAll(".faq-question").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        item.classList.toggle("open");
+      });
+    });
+
+    const policies = {
       privacy: {
         title: "Privacy Policy",
-        html: "<p>CostAssist.org respects your privacy. We do not collect or store sensitive personal information directly on this informational landing page. When you click through to our third-party partner (UpLevel Rewards), any information you submit is governed by their respective Privacy Policy. We may use standard analytics and referral parameters to measure campaign performance.</p>"
+        text: "CostAssist.org does not collect or store personal data directly on this page. When you click through to UpLevel Rewards, any details you provide are governed by their Privacy Policy. Standard referral parameters may be used to measure campaign performance."
       },
       terms: {
         title: "Terms of Use",
-        html: "<p>By using CostAssist.org, you acknowledge that we act solely as an independent marketing referral site. Reward availability, deal requirements, and fulfillment for the $250 Walmart Gift Card are determined exclusively by UpLevel Rewards. You must be at least 18 years old and a legal US resident to participate.</p>"
+        text: "CostAssist.org operates as an independent promotional referral site. Reward qualification, deal tracking, and $250 Walmart Gift Card fulfillment are managed solely by UpLevel Rewards. Open to eligible US residents aged 18+."
       },
       contact: {
-        title: "Contact Us",
-        html: "<p>For questions regarding this webpage, reach us at <strong>support@costassist.org</strong>. For reward status, deal tracking, or gift card fulfillment inquiries, please contact UpLevel Rewards customer support directly through your member dashboard.</p>"
+        title: "Contact",
+        text: "For website inquiries, email support@costassist.org. For questions about deal tracking or gift card delivery, please contact UpLevel Rewards support directly through your member account."
       }
     };
 
-    function openModal(type) {
-      const modal = document.getElementById("legal-modal");
-      document.getElementById("modal-title").textContent = modalContent[type].title;
-      document.getElementById("modal-body").innerHTML = modalContent[type].html;
-      modal.classList.add("open");
+    function openModal(key) {
+      document.getElementById("modal-title").textContent = policies[key].title;
+      document.getElementById("modal-body").textContent = policies[key].text;
+      document.getElementById("legal-modal").classList.add("open");
     }
 
     function closeModal() {
