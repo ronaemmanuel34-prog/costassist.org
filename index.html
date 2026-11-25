@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CostAssist | $250 Holiday Walmart Gift Card Reward Program</title>
+  <meta name="description" content="See how eligible US shoppers can earn a $250 Walmart Gift Card toward holiday groceries, gifts, and family essentials through UpLevel Rewards." />
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --primary: #0053e2;
+      --primary-hover: #003ea8;
+      --accent: #ffc220;
+      --holiday: #b91c1c;
+      --text: #111827;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --success: #047857;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .top-bar {
+      background: #0f172a;
+      color: #f8fafc;
+      text-align: center;
+      font-size: 0.78rem;
+      padding: 8px 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .top-bar span {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .geo-badge {
+      font-size: 0.75rem;
+      background: #ecfdf5;
+      color: var(--success);
+      border: 1px solid #a7f3d0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+
+    .holiday-pill {
+      display: inline-block;
+      background: #fef2f2;
+      color: var(--holiday);
+      border: 1px solid #fecaca;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      font-size: 1.65rem;
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    h1 .highlight {
+      color: var(--primary);
+    }
+
+    .subtitle {
+      font-size: 0.96rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .card-visual {
+      background: linear-gradient(135deg, #0053e2 0%, #002d7a 100%);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(0, 83, 226, 0.25);
+    }
+
+    .card-visual-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      font-size: 0.85rem;
+      opacity: 0.9;
+      font-weight: 600;
+    }
+
+    .card-amount {
+      font-size: 2.35rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .card-caption {
+      font-size: 0.85rem;
+      color: #e2e8f0;
+    }
+
+    .cta-btn {
+      display: block;
+      width: 100%;
+      background: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.08rem;
+      font-weight: 700;
+      padding: 16px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 83, 226, 0.35);
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    .cta-btn:hover {
+      background: var(--primary-hover);
+    }
+
+    .cta-btn:active {
+      transform: scale(0.99);
+    }
+
+    .cta-subtext {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .steps-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .steps-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: #eff6ff;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.85rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #bfdbfe;
+    }
+
+    .step-text h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .step-text p {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .disclosure-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 16px;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .disclosure-box strong {
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links button {
+      background: none;
+      border: none;
+      color: var(--primary);
+      text-decoration: underline;
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+
+    /* Modal Styles */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      z-index: 50;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      max-width: 480px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      border-radius: 14px;
+      padding: 20px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .close-btn {
+      background: #f3f4f6;
+      border: none;
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <span>HOLIDAY SHOPPING REWARD</span> • Available for Eligible US Residents (18+)
+  </div>
+
+  <header>
+    <div class="brand"><span class="brand-dot"></span> CostAssist.org</div>
+    <div class="geo-badge">US Program Open</div>
+  </header>
+
+  <main class="container">
+    <section class="hero-card">
+      <div class="holiday-pill">Holiday Household &amp; Gift Guide</div>
+      <h1>Earn a <span class="highlight">$250 Walmart Gift Card</span> for Holiday Shopping</h1>
+      <p class="subtitle">
+        Help cover holiday groceries, kids' gifts, and family essentials by participating in the official UpLevel Rewards program.
+      </p>
+
+      <div class="card-visual">
+        <div class="card-visual-top">
+          <span>HOLIDAY SHOPPING REWARD</span>
+          <span>WALMART</span>
+        </div>
+        <div class="card-amount">$250.00</div>
+        <div class="card-caption">Reward fulfilled upon completing program deal requirements</div>
+      </div>
+
+      <a id="offer-cta" href="https://giftclick.org/?offer_id=5046&aff_id=62181" class="cta-btn" rel="nofollow sponsored">
+        Continue to UpLevel Rewards &rarr;
+      </a>
+      <p class="cta-subtext">Takes ~2 minutes to register • Must be 18+ and a US resident</p>
+    </section>
+
+    <section class="steps-section">
+      <h2 class="steps-title">How the $250 Reward Program Works</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <h3>Register Your Basic Details</h3>
+          <p>Click the button above to visit UpLevel Rewards and confirm your US eligibility (18+).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <h3>Complete 10 Qualifying Partner Deals</h3>
+          <p>Choose and complete 10 partner deals across four reward levels within 60 days of your first deal. Note: Partner deals typically involve trials, purchases, or paid subscriptions.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <h3>Verify &amp; Claim Your $250 Gift Card</h3>
+          <p>Finish the reward claim and identity verification process to receive your $250 Walmart Gift Card.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="disclosure-box">
+      <strong>Important Program &amp; Affiliate Disclosure:</strong> CostAssist.org is an independent promotional publisher and may receive compensation when you register or complete offers through links on this page. This promotion is operated by UpLevel Rewards and is not sponsored, endorsed, or administered by Walmart. Registration or answering survey questions alone does not qualify for the $250 reward; completion of 10 required partner deals (which usually require purchases or paid subscriptions) and identity verification are mandatory.
+    </section>
+
+    <footer>
+      <div class="footer-links">
+        <button type="button" onclick="openModal('privacy')">Privacy Policy</button>
+        <button type="button" onclick="openModal('terms')">Terms of Use</button>
+        <button type="button" onclick="openModal('contact')">Contact</button>
+      </div>
+      <p>&copy; 2026 CostAssist.org. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <!-- Legal Modals -->
+  <div id="legal-modal" class="modal-backdrop" onclick="closeModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="modal-title">Policy</h3>
+        <button type="button" class="close-btn" onclick="closeModal()">Close</button>
+      </div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    // Pass through any sub_id / utm tracking tags from your YouTube Shorts URL to the offer link
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const cta = document.getElementById("offer-cta");
+      if (cta && params.toString()) {
+        const baseUrl = new URL(cta.href);
+        params.forEach((value, key) => {
+          if (!baseUrl.searchParams.has(key)) {
+            baseUrl.searchParams.set(key, value);
+          }
+        });
+        cta.href = baseUrl.toString();
+      }
+    })();
+
+    const modalContent = {
+      privacy: {
+        title: "Privacy Policy",
+        html: "<p>CostAssist.org respects your privacy. We do not collect or store sensitive personal information directly on this informational landing page. When you click through to our third-party partner (UpLevel Rewards), any information you submit is governed by their respective Privacy Policy. We may use standard analytics and referral parameters to measure campaign performance.</p>"
+      },
+      terms: {
+        title: "Terms of Use",
+        html: "<p>By using CostAssist.org, you acknowledge that we act solely as an independent marketing referral site. Reward availability, deal requirements, and fulfillment for the $250 Walmart Gift Card are determined exclusively by UpLevel Rewards. You must be at least 18 years old and a legal US resident to participate.</p>"
+      },
+      contact: {
+        title: "Contact Us",
+        html: "<p>For questions regarding this webpage, reach us at <strong>support@costassist.org</strong>. For reward status, deal tracking, or gift card fulfillment inquiries, please contact UpLevel Rewards customer support directly through your member dashboard.</p>"
+      }
+    };
+
+    function openModal(type) {
+      const modal = document.getElementById("legal-modal");
+      document.getElementById("modal-title").textContent = modalContent[type].title;
+      document.getElementById("modal-body").innerHTML = modalContent[type].html;
+      modal.classList.add("open");
+    }
+
+    function closeModal() {
+      document.getElementById("legal-modal").classList.remove("open");
+    }
+  </script>
+</body>
+</html>
